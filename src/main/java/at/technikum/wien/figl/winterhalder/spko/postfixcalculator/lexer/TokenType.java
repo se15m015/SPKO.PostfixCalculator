@@ -5,7 +5,9 @@ package at.technikum.wien.figl.winterhalder.spko.postfixcalculator.lexer;
  */
 public enum TokenType {
     NUMBER("-?[0-9]+(\\.[0-9]+)?"),
+    VAR("[a-z]+"),
     BINARY("[+|-|*|/]"),
+    ASSIGN("[=]"),
     UNARY("[~]"),
     WHITESPACE("[ \t\f\r\n]+");
 

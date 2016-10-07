@@ -30,6 +30,9 @@ public class Lexer {
             if (matcher.group(TokenType.NUMBER.name()) != null) {
                 tokens.add(new Token(TokenType.NUMBER, null, matcher.group(TokenType.NUMBER.name())));
                 continue;
+            } else if (matcher.group(TokenType.VAR.name()) != null) {
+                tokens.add(new Token(TokenType.VAR, null, matcher.group(TokenType.VAR.name())));
+                continue;
             } else if (matcher.group(TokenType.BINARY.name()) != null) {
                 String binaryPattern = matcher.group(TokenType.BINARY.name());
                 Matcher subMatcher = subTokenPatterns.matcher(binaryPattern);
@@ -51,7 +54,11 @@ public class Lexer {
                     }
                 }
 
-            }  if (matcher.group(TokenType.UNARY.name()) != null) {
+            } else if (matcher.group(TokenType.ASSIGN.name()) != null) {
+                tokens.add(new Token(TokenType.ASSIGN, null, matcher.group(TokenType.ASSIGN.name())));
+                continue;
+
+            } else if (matcher.group(TokenType.UNARY.name()) != null) {
                 tokens.add(new Token(TokenType.UNARY, TokenSubType.OPNEG, matcher.group(TokenType.UNARY.name())));
                 continue;
 
