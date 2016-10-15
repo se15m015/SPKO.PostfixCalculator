@@ -22,6 +22,7 @@ public class PostfixCalculatorTest {
 
     @Test
     public void TestOK1() throws IOException {
+        assertEquals(20.0, pc.parse("2 3 + 4 *").doubleValue(), 0.0);
         assertEquals(27.0, pc.parse("3 4 5 +*").doubleValue(), 0.0);
         assertEquals(23.0, pc.parse("3 4 5 *+").doubleValue(), 0.0);
         assertEquals(27.0, pc.parse("3 4 5+*").doubleValue(), 0.0);
