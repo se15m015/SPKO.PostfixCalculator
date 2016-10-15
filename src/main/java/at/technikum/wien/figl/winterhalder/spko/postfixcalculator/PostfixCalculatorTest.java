@@ -41,9 +41,7 @@ public class PostfixCalculatorTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void TestEX3()  {
-            pc.parse("4 5 5 7 3 +*");
-    }
+    public void TestEX3() { pc.parse("4 5 5 7 3 +*"); }
 
     @Test
     public void TestVar1()  {

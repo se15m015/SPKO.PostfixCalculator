@@ -22,6 +22,7 @@ import java.util.Stack;
 public class PostfixCalculator {
 
     public static void main(String[] args) {
+        System.out.println("hallo from main postfix");
     }
 
     public Double parse(String input) {
@@ -96,4 +97,6 @@ public class PostfixCalculator {
         }
         return result;
     }
+
+    public void test(){ System.out.println("test from Postfix3"); }
 }
